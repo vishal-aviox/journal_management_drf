@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "406fabeb-cb42-41ec-b701-fe40b9412c59",
+		"name": "Journal_Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/api-token-auth/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api-token-auth/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api-token-auth",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/article",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token 72aae750a9ab5c142fa3cbb509eb3f5dc4695108",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "publisher",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "Data Structure",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "An introduction to data structure",
+							"type": "text"
+						},
+						{
+							"key": "published_date",
+							"value": "2021-05-03",
+							"type": "text"
+						},
+						{
+							"key": "published",
+							"value": "True",
+							"type": "text"
+						},
+						{
+							"key": "is_active",
+							"value": "True",
+							"type": "text"
+						},
+						{
+							"key": "average_ratings",
+							"value": "5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/article",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"article"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/article",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token 72aae750a9ab5c142fa3cbb509eb3f5dc4695108",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/article",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"article"
+					]
+				},
+				"description": "Retuen All active articles"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/publisher",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token 72aae750a9ab5c142fa3cbb509eb3f5dc4695108",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/publisher",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"publisher"
+					]
+				},
+				"description": "Returns all active publishers"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/deactive_articles",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token 72aae750a9ab5c142fa3cbb509eb3f5dc4695108",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/deactive_articles",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"deactive_articles"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
